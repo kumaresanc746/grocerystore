@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Grocery Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🛒 GroceryMart</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li id="user-menu">
+                    <span id="user-name"></span> | <a href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-tabs">
+                <button class="tab-button active" onclick="showTab('orders')">My Orders</button>
+                <button class="tab-button" onclick="showTab('settings')">Settings</button>
+            </div>
+
+            <div id="orders-tab" class="tab-content active">
+                <h2>Order History</h2>
+                <div id="orders-list">
+                    <!-- Orders loaded via JavaScript -->
+                </div>
+            </div>
+
+            <div id="settings-tab" class="tab-content">
+                <h2>Account Settings</h2>
+                <form id="settings-form">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="settings-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="settings-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea id="settings-address" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GroceryMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
+

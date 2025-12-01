@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Grocery Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🛒 GroceryMart</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li id="auth-links">
+                    <a href="login.html">Login</a>
+                </li>
+                <li id="user-menu" style="display: none;">
+                    <span id="user-name"></span> | <a href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="products-header">
+            <h1>All Products</h1>
+            <div class="filters">
+                <select id="category-filter" onchange="loadProducts()">
+                    <option value="">All Categories</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="meat">Meat</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search products..." onkeyup="loadProducts()">
+            </div>
+        </div>
+
+        <div class="product-grid" id="products-grid">
+            <!-- Products loaded via JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GroceryMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
+
+
